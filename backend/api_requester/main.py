@@ -118,6 +118,7 @@ def get_fire_stats(min_date, max_date, interval, min_lon: float, min_lat: float,
     finally:
         database.close()
 
+
 @app.get("/fires_gridview")
 def get_grid_fires(date, min_lon: float, min_lat: float, max_lon: float, max_lat: float):
     database = connect_to_db()
@@ -163,12 +164,12 @@ def get_grid_fires(date, min_lon: float, min_lat: float, max_lon: float, max_lat
 
 @app.get("/forecast")
 def fires_forecast(
-    min_date: str,
     max_date: str,
     min_lon: float,
     min_lat: float,
     max_lon: float,
     max_lat: float,
+    min_date: str = "2016-01-01",
     forecast_duration: int = 12,
     period: float = 12,
     harmonics_count: int = 2,
