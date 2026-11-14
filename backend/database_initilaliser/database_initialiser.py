@@ -1,4 +1,5 @@
 import psycopg2
+import os
 
 
 def create_db(user="postgres", password="123456"):
@@ -7,6 +8,7 @@ def create_db(user="postgres", password="123456"):
         user (str): Your PostgreSQL username. Defaults to 'postgres'.
         password (str): Your PostgreSQL password. Defaults to 'postgres'.
     """
+
     database = psycopg2.connect(
         host="localhost",
         port='5432',
@@ -31,14 +33,19 @@ def connect_to_db(user="postgres", password="123456"):
     Returns:
         An active database 'tulip_fire_data'
     """
-    database = psycopg2.connect(
-        host="localhost",
-        port='5432',
-        user=user,
-        password=password,
-        dbname='tulip_fire_data'
-    )
-    return database
+    database_url = os.getenv("DATABASE_URL")
+
+    if database_url:
+        return psycopg2.connect(database_url)
+    else:
+        database = psycopg2.connect(
+            host="localhost",
+            port='5432',
+            user=user,
+            password=password,
+            dbname='tulip_fire_data'
+        )
+        return database
 
 
 def create_table_fires():
