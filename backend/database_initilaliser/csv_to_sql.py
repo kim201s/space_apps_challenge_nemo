@@ -1,6 +1,7 @@
 import pandas as pd
 import io
-from database_initialiser import connect_to_db
+from backend.database_initilaliser.database_initialiser import connect_to_db
+
 COLUMNS = [
     "latitude",
     "longitude",
@@ -75,17 +76,17 @@ def save_fires(dataframe):
         database.close()
 
 # When dropping a database / establishing a new connection, uncomment the code below
+# Do not run this code while the API server is running
 
-
-save_fires(universal_harmoniser("_data/MODIS fl/modis nrt fl.csv", null_cols=["type"]))
-save_fires(universal_harmoniser("_data/MODIS fl/modis archive fl.csv"))
-save_fires(universal_harmoniser("_data/MODIS uz/modis nrt uz.csv", null_cols=["type"]))
-save_fires(universal_harmoniser("_data/MODIS uz/modis archive uz.csv"))
-
-save_fires(universal_harmoniser("_data/VIIRS combined fl/nrt viirs fl.csv", null_cols=["type"]))
-save_fires(universal_harmoniser("_data/VIIRS combined fl/archive viirs fl.csv"))
-save_fires(universal_harmoniser("_data/VIIRS combined uz/nrt viirs uz.csv", null_cols=["type"]))
-save_fires(universal_harmoniser("_data/VIIRS combined uz/archive viirs uz.csv"))
+# save_fires(universal_harmoniser("_data/MODIS fl/modis nrt fl.csv", null_cols=["type"]))
+# save_fires(universal_harmoniser("_data/MODIS fl/modis archive fl.csv"))
+# save_fires(universal_harmoniser("_data/MODIS uz/modis nrt uz.csv", null_cols=["type"]))
+# save_fires(universal_harmoniser("_data/MODIS uz/modis archive uz.csv"))
+#
+# save_fires(universal_harmoniser("_data/VIIRS combined fl/nrt viirs fl.csv", null_cols=["type"]))
+# save_fires(universal_harmoniser("_data/VIIRS combined fl/archive viirs fl.csv"))
+# save_fires(universal_harmoniser("_data/VIIRS combined uz/nrt viirs uz.csv", null_cols=["type"]))
+# save_fires(universal_harmoniser("_data/VIIRS combined uz/archive viirs uz.csv"))
 
 
 
