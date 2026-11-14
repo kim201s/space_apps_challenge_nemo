@@ -60,8 +60,6 @@ def create_table_fires():
         acq_time INTEGER,
         
         frp REAL,
-        bright_ti4 REAL,
-        bright_ti5 REAL,
         brightness REAL,
         bright_t31 REAL,
         hotspot_type SMALLINT,
