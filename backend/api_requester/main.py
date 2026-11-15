@@ -187,7 +187,3 @@ def fires_forecast(
                 period,
                 harmonics_count
             )}
-
-    # return {"mean_frp_forecast": mean_values}
-
-    # mean_frp_forecast = forecast_modelling(stats[0])
