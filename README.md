@@ -32,7 +32,7 @@ Harmonized MODIS / VIIRS detections
 The frontend communicates with the backend over HTTPS. Database credentials remain on the server and are not exposed to the frontend.
 
 Data
-
+Note that the data in the MVP inly features Uzbekistan and Florida.
 The platform uses active-fire / thermal-anomaly observations distributed through NASA FIRMS. The project works with observations from:
 
 MODIS — on NASA's Terra and Aqua satellites.
@@ -41,7 +41,6 @@ VIIRS — on Suomi-NPP and NOAA-20 / NOAA-21 satellites, depending on the downlo
 
 Source: NASA FIRMS
 
-MODIS and VIIRS files have different column sets. The import process harmonizes the fields used by the application and preserves sensor-specific values where available. Missing sensor-specific fields are represented as null values.
 
 Important data interpretation notes
 
