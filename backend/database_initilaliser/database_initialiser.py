@@ -84,7 +84,7 @@ def create_table_fires():
 
 def index_database():
     """
-    Creates indexes for the tablr
+    Creates indexes for the table 'hotspots_data'
     :return:
     """
     database = connect_to_db()
