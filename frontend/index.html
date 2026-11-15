@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>T.U.L.I.P.</title>
+    
+
+    <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.147/Build/Cesium/Widgets/widgets.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.147/Build/Cesium/Cesium.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div id="toolbar">
+        <h2>T.U.L.I.P.</h2>
+
+        <label>Observation date</label>
+        <input type="date" id="dateFilter">
+
+        <button id="updateMapBtn">
+            Update Map
+        </button>
+
+        <p id="status">Ready</p>
+    </div>
+
+    
+
+    <aside id="statsPanel">
+        <div class="statsHeader">
+            <h3>Fire Statistics</h3>
+        </div>
+
+        <label>Start date</label>
+        <input type="date" id="statsFrom">
+
+        <label>End date</label>
+        <input type="date" id="statsTo">
+
+        <label>Interval (days)</label>
+        <input type="number" id="statsInterval" min="1" value="7">
+
+        <label>Metric</label>
+        <select id="statsMetric">
+            <option value="bucket_fire_count">Detection count</option>
+            <option value="total_frp">Total FRP</option>
+            <option value="mean_frp">Mean FRP</option>
+        </select>
+
+        <button id="loadStatsBtn">Load Statistics</button>
+
+        <div id="statsStatus"></div>
+
+        <div class="chartContainer">
+            <canvas id="statsChart"></canvas>
+        </div>
+
+        <h3>Note that the frontend is an MVP and does not feature all API functions yet</h3>
+    </aside>
+
+
+
+
+
+    <div id="cesiumContainer"></div>
+
+    <script type="module" src="./js/main.js"></script>
+
+</body>
+
+</html>
